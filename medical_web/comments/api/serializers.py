@@ -18,12 +18,11 @@ def create_comment_serializer(model_type='post', slug=None, parent_id=None, user
 			model = Comment
 			fields = [
 			    'id',
-			    'parent',
 			    'content',
 			    'timestamp',
 			]
 		def __init__(self, *args, **kwargs):
-			self.type = model_type
+			self.model_type = model_type
 			self.slug = slug
 			self.parent_obj = None
 			if parent_id:
