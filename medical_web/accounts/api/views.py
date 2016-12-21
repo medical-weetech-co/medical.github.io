@@ -41,8 +41,9 @@ from .serializers import (
 
 class UserCreateAPIView(CreateAPIView):
 	serializer_class = UserCreateSerializer
-	queryset = User.objects.all()
-	
+	queryset = User.objects.all
+	permission_classes = [AllowAny]
+		
 class UserLoginAPIView(APIView):
 	permission_classes = [AllowAny]
 	serializer_class = UserLoginSerializer
